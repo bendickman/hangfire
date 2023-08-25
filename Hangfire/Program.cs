@@ -1,5 +1,4 @@
 ﻿using Hangfire;
-using Hangfire.MemoryStorage;
 using Hangfire.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +22,7 @@ await Host
 
         services.AddHangfire(opt =>
         {
-            opt.UseMemoryStorage();
+            opt.UseInMemoryStorage();
             // OR opt.UseSqlServerStorage("your-connection-string");
         });
 
